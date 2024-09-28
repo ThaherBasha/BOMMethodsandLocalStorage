@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .formborder{
+            height:200px;
+            width:250px;
+            border:2px solid;
+        }
+    </style>
+  </head>
+  <body>
+    <h2>Login Form</h2>
+    <div class="formborder">
+    <form id="subm">
+      <label for="name">Enter User name</label><br><br>
+      <input id="name" type="text" required /><br><br>
+      <label for="mail">Enter Email</label><br><br>
+      <input id="mail" type="email" required /><br><br>
+      <input type="submit" />
+    </div>
+      <p id="usrnme"></p>
+      <p id="gmail"></p>
+    </form>
+    <script>
+      let u = document.getElementById("usrnme");
+      let g = document.getElementById("gmail");
+      let username = document.getElementById("name");
+      let sbmt = document.getElementById("subm");
+      sbmt.addEventListener("submit", (e) => {
+        e.preventDefault(); // This method is used to stop the shuffling while submitting the form
+        localStorage.setItem("username", username.value);
+        sessionStorage.setItem("email", mail.value);
+        u.innerHTML = localStorage.getItem("username");
+        g.innerHTML = sessionStorage.getItem("email");
+      });
+     // alert("Hi")
+     // prompt("enter user name");
+     // let decision=confirm("if you want to visit a page")
+      //if(decision)
+      //{
+       // window.open("https://www.w3schools.com")
+      //}
+    </script>
+  </body>
+</html>
